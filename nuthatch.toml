@@ -1,0 +1,115 @@
+# Liquidations: every lending liquidation on Ethereum mainnet since 2023-01-01.
+# Aave v3 (Core, Prime, EtherFi), Spark, Compound v3, Morpho Blue, Sky/Maker and Liquity,
+# with Chainlink ETH/USD and BTC/USD to price them. Event-only ABIs, written by hand.
+
+[nest]
+name = "liquidations"
+chain = "mainnet"
+chain_id = 1
+rpc_urls = ["https://gateway.tenderly.co/public/mainnet"]   # a keyed endpoint goes on the command line: --rpc
+schema_version = 1
+block_timestamps = true
+
+[[contracts]]
+alias = "aave"
+address = "0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2"
+start_block = 16308189
+abi = "abis/aave_pool.json"
+
+[[contracts]]
+alias = "aave_prime"
+address = "0x4e033931ad43597d96D6bcc25c280717730B58B1"
+start_block = 16308189
+abi = "abis/aave_pool.json"
+
+[[contracts]]
+alias = "aave_etherfi"
+address = "0x0AA97c284e98396202b6A04024F5E2c65026F3c0"
+start_block = 16308189
+abi = "abis/aave_pool.json"
+
+[[contracts]]
+alias = "spark"
+address = "0xC13e21B648A5Ee794902342038FF3aDAB66BE987"
+start_block = 16308189
+abi = "abis/aave_pool.json"
+
+[[contracts]]
+alias = "comet_usdc"
+address = "0xc3d688B66703497DAA19211EEdff47f25384cdc3"
+start_block = 16308189
+abi = "abis/comet.json"
+
+[[contracts]]
+alias = "comet_weth"
+address = "0xA17581A9E3356d9A858b789D68B4d866e593aE94"
+start_block = 16308189
+abi = "abis/comet.json"
+
+[[contracts]]
+alias = "comet_usds"
+address = "0x5D409e56D886231aDAf00c8775665AD0f9897b56"
+start_block = 16308189
+abi = "abis/comet.json"
+
+[[contracts]]
+alias = "comet_wsteth"
+address = "0x3D0bb1ccaB520A66e607822fC55BC921738fAFE3"
+start_block = 16308189
+abi = "abis/comet.json"
+
+[[contracts]]
+alias = "morpho"
+address = "0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb"
+start_block = 16308189
+abi = "abis/morpho.json"
+
+[[contracts]]
+alias = "maker"
+address = "0x135954d155898D42C90D2a57824C690e0c7BEf1B"
+start_block = 16308189
+abi = "abis/maker_dog.json"
+
+[[contracts]]
+alias = "liquity"
+address = "0xA39739EF8b0231DbFA0DcdA07d7e29faAbCf4bb2"
+start_block = 16308189
+abi = "abis/liquity_trove_manager.json"
+
+# Chainlink: the proxies emit nothing, so each phase aggregator live since 2023 is listed.
+
+[[contracts]]
+alias = "eth_usd_p5"
+address = "0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"
+
+[[contracts]]
+alias = "eth_usd_p6"
+address = "0xE62B71cf983019BFf55bC83B48601ce8419650CC"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"
+
+[[contracts]]
+alias = "eth_usd_p7"
+address = "0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"
+
+[[contracts]]
+alias = "btc_usd_p5"
+address = "0xAe74faA92cB67A95ebCAB07358bC222e33A34dA7"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"
+
+[[contracts]]
+alias = "btc_usd_p6"
+address = "0xdBe1941BFbe4410D6865b9b7078e0b49af144D2d"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"
+
+[[contracts]]
+alias = "btc_usd_p7"
+address = "0x4a3411ac2948B33c69666B35cc6d055B27Ea84f1"
+start_block = 16308189
+abi = "abis/chainlink_aggregator.json"

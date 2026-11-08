@@ -1,0 +1,569 @@
+# semantic.toml - what this nest's data *means* (RFC-0016). Read by the MCP `schema`
+# tool, the admin UI, and the scaffolded skill. Edit descriptions freely; the
+# `[table.*.footguns]` are DERIVED from the ABI and regenerated - leave them be.
+
+schema_version = 1
+
+[nest]
+description = "The `liquidations` nest on mainnet. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.aave__liquidation_call]
+description = "`LiquidationCall(address,address,address,uint256,uint256,address,bool)` events emitted by the `aave` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per LiquidationCall(address,address,address,uint256,uint256,address,bool) event"
+
+[table.aave__liquidation_call.columns]
+collateralAsset = "The `collateralAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtAsset = "The `debtAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtToCover = "The `debtToCover` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidatedCollateralAmount = "The `liquidatedCollateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidator = "The `liquidator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+receiveAToken = "The `receiveAToken` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `receiveAToken = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `receiveAToken = 'true'` or `CAST(receiveAToken AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.aave__liquidation_call.footguns]
+reserved_words = ["user"]
+big_ints = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+overflows_dec = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+bools = ["receiveAToken"]
+
+[table.aave_etherfi__liquidation_call]
+description = "`LiquidationCall(address,address,address,uint256,uint256,address,bool)` events emitted by the `aave_etherfi` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per LiquidationCall(address,address,address,uint256,uint256,address,bool) event"
+
+[table.aave_etherfi__liquidation_call.columns]
+collateralAsset = "The `collateralAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtAsset = "The `debtAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtToCover = "The `debtToCover` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidatedCollateralAmount = "The `liquidatedCollateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidator = "The `liquidator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+receiveAToken = "The `receiveAToken` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `receiveAToken = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `receiveAToken = 'true'` or `CAST(receiveAToken AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.aave_etherfi__liquidation_call.footguns]
+reserved_words = ["user"]
+big_ints = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+overflows_dec = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+bools = ["receiveAToken"]
+
+[table.aave_prime__liquidation_call]
+description = "`LiquidationCall(address,address,address,uint256,uint256,address,bool)` events emitted by the `aave_prime` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per LiquidationCall(address,address,address,uint256,uint256,address,bool) event"
+
+[table.aave_prime__liquidation_call.columns]
+collateralAsset = "The `collateralAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtAsset = "The `debtAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtToCover = "The `debtToCover` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidatedCollateralAmount = "The `liquidatedCollateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidator = "The `liquidator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+receiveAToken = "The `receiveAToken` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `receiveAToken = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `receiveAToken = 'true'` or `CAST(receiveAToken AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.aave_prime__liquidation_call.footguns]
+reserved_words = ["user"]
+big_ints = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+overflows_dec = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+bools = ["receiveAToken"]
+
+[table.btc_usd_p5__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `btc_usd_p5` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.btc_usd_p5__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.btc_usd_p5__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.btc_usd_p6__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `btc_usd_p6` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.btc_usd_p6__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.btc_usd_p6__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.btc_usd_p7__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `btc_usd_p7` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.btc_usd_p7__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.btc_usd_p7__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.comet_usdc__absorb_collateral]
+description = "`AbsorbCollateral(address,address,address,uint256,uint256)` events emitted by the `comet_usdc` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbCollateral(address,address,address,uint256,uint256) event"
+
+[table.comet_usdc__absorb_collateral.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAbsorbed = "The `collateralAbsorbed` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usdc__absorb_collateral.footguns]
+big_ints = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+overflows_dec = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+
+[table.comet_usdc__absorb_debt]
+description = "`AbsorbDebt(address,address,uint256,uint256)` events emitted by the `comet_usdc` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbDebt(address,address,uint256,uint256) event"
+
+[table.comet_usdc__absorb_debt.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+basePaidOut = "The `basePaidOut` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usdc__absorb_debt.footguns]
+big_ints = [
+    "basePaidOut",
+    "usdValue",
+]
+overflows_dec = [
+    "basePaidOut",
+    "usdValue",
+]
+
+[table.comet_usdc__buy_collateral]
+description = "`BuyCollateral(address,address,uint256,uint256)` events emitted by the `comet_usdc` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BuyCollateral(address,address,uint256,uint256) event"
+
+[table.comet_usdc__buy_collateral.columns]
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+baseAmount = "The `baseAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+buyer = "The `buyer` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAmount = "The `collateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usdc__buy_collateral.footguns]
+big_ints = [
+    "baseAmount",
+    "collateralAmount",
+]
+overflows_dec = [
+    "baseAmount",
+    "collateralAmount",
+]
+
+[table.comet_usds__absorb_collateral]
+description = "`AbsorbCollateral(address,address,address,uint256,uint256)` events emitted by the `comet_usds` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbCollateral(address,address,address,uint256,uint256) event"
+
+[table.comet_usds__absorb_collateral.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAbsorbed = "The `collateralAbsorbed` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usds__absorb_collateral.footguns]
+big_ints = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+overflows_dec = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+
+[table.comet_usds__absorb_debt]
+description = "`AbsorbDebt(address,address,uint256,uint256)` events emitted by the `comet_usds` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbDebt(address,address,uint256,uint256) event"
+
+[table.comet_usds__absorb_debt.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+basePaidOut = "The `basePaidOut` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usds__absorb_debt.footguns]
+big_ints = [
+    "basePaidOut",
+    "usdValue",
+]
+overflows_dec = [
+    "basePaidOut",
+    "usdValue",
+]
+
+[table.comet_usds__buy_collateral]
+description = "`BuyCollateral(address,address,uint256,uint256)` events emitted by the `comet_usds` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BuyCollateral(address,address,uint256,uint256) event"
+
+[table.comet_usds__buy_collateral.columns]
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+baseAmount = "The `baseAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+buyer = "The `buyer` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAmount = "The `collateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_usds__buy_collateral.footguns]
+big_ints = [
+    "baseAmount",
+    "collateralAmount",
+]
+overflows_dec = [
+    "baseAmount",
+    "collateralAmount",
+]
+
+[table.comet_weth__absorb_collateral]
+description = "`AbsorbCollateral(address,address,address,uint256,uint256)` events emitted by the `comet_weth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbCollateral(address,address,address,uint256,uint256) event"
+
+[table.comet_weth__absorb_collateral.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAbsorbed = "The `collateralAbsorbed` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_weth__absorb_collateral.footguns]
+big_ints = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+overflows_dec = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+
+[table.comet_weth__absorb_debt]
+description = "`AbsorbDebt(address,address,uint256,uint256)` events emitted by the `comet_weth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbDebt(address,address,uint256,uint256) event"
+
+[table.comet_weth__absorb_debt.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+basePaidOut = "The `basePaidOut` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_weth__absorb_debt.footguns]
+big_ints = [
+    "basePaidOut",
+    "usdValue",
+]
+overflows_dec = [
+    "basePaidOut",
+    "usdValue",
+]
+
+[table.comet_weth__buy_collateral]
+description = "`BuyCollateral(address,address,uint256,uint256)` events emitted by the `comet_weth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BuyCollateral(address,address,uint256,uint256) event"
+
+[table.comet_weth__buy_collateral.columns]
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+baseAmount = "The `baseAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+buyer = "The `buyer` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAmount = "The `collateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_weth__buy_collateral.footguns]
+big_ints = [
+    "baseAmount",
+    "collateralAmount",
+]
+overflows_dec = [
+    "baseAmount",
+    "collateralAmount",
+]
+
+[table.comet_wsteth__absorb_collateral]
+description = "`AbsorbCollateral(address,address,address,uint256,uint256)` events emitted by the `comet_wsteth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbCollateral(address,address,address,uint256,uint256) event"
+
+[table.comet_wsteth__absorb_collateral.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAbsorbed = "The `collateralAbsorbed` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_wsteth__absorb_collateral.footguns]
+big_ints = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+overflows_dec = [
+    "collateralAbsorbed",
+    "usdValue",
+]
+
+[table.comet_wsteth__absorb_debt]
+description = "`AbsorbDebt(address,address,uint256,uint256)` events emitted by the `comet_wsteth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AbsorbDebt(address,address,uint256,uint256) event"
+
+[table.comet_wsteth__absorb_debt.columns]
+absorber = "The `absorber` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+basePaidOut = "The `basePaidOut` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+usdValue = "The `usdValue` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_wsteth__absorb_debt.footguns]
+big_ints = [
+    "basePaidOut",
+    "usdValue",
+]
+overflows_dec = [
+    "basePaidOut",
+    "usdValue",
+]
+
+[table.comet_wsteth__buy_collateral]
+description = "`BuyCollateral(address,address,uint256,uint256)` events emitted by the `comet_wsteth` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per BuyCollateral(address,address,uint256,uint256) event"
+
+[table.comet_wsteth__buy_collateral.columns]
+asset = "The `asset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+baseAmount = "The `baseAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+buyer = "The `buyer` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+collateralAmount = "The `collateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.comet_wsteth__buy_collateral.footguns]
+big_ints = [
+    "baseAmount",
+    "collateralAmount",
+]
+overflows_dec = [
+    "baseAmount",
+    "collateralAmount",
+]
+
+[table.eth_usd_p5__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `eth_usd_p5` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.eth_usd_p5__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eth_usd_p5__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.eth_usd_p6__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `eth_usd_p6` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.eth_usd_p6__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eth_usd_p6__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.eth_usd_p7__answer_updated]
+description = "`AnswerUpdated(int256,uint256,uint256)` events emitted by the `eth_usd_p7` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per AnswerUpdated(int256,uint256,uint256) event"
+
+[table.eth_usd_p7__answer_updated.columns]
+current = "The `current` int256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+roundId = "The `roundId` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+updatedAt = "The `updatedAt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.eth_usd_p7__answer_updated.footguns]
+big_ints = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+overflows_dec = [
+    "current",
+    "roundId",
+    "updatedAt",
+]
+
+[table.liquity__trove_liquidated]
+description = "`TroveLiquidated(address,uint256,uint256,uint8)` events emitted by the `liquity` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per TroveLiquidated(address,uint256,uint256,uint8) event"
+
+[table.liquity__trove_liquidated.columns]
+_borrower = "The `_borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+_coll = "The `_coll` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+_debt = "The `_debt` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+_operation = "The `_operation` uint8 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.liquity__trove_liquidated.footguns]
+big_ints = [
+    "_debt",
+    "_coll",
+]
+overflows_dec = [
+    "_debt",
+    "_coll",
+]
+
+[table.maker__bark]
+description = "`Bark(bytes32,address,uint256,uint256,uint256,address,uint256)` events emitted by the `maker` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Bark(bytes32,address,uint256,uint256,uint256,address,uint256) event"
+
+[table.maker__bark.columns]
+art = "The `art` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+clip = "The `clip` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+due = "The `due` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+id = "The `id` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+ilk = "The `ilk` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+ink = "The `ink` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+urn = "The `urn` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.maker__bark.footguns]
+big_ints = [
+    "ink",
+    "art",
+    "due",
+    "id",
+]
+overflows_dec = [
+    "ink",
+    "art",
+    "due",
+    "id",
+]
+
+[table.morpho__create_market]
+description = "`CreateMarket(bytes32,(address,address,address,address,uint256))` events emitted by the `morpho` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per CreateMarket(bytes32,(address,address,address,address,uint256)) event"
+
+[table.morpho__create_market.columns]
+id = "The `id` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+marketParams = "The `marketParams` tuple parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.morpho__liquidate]
+description = "`Liquidate(bytes32,address,address,uint256,uint256,uint256,uint256,uint256)` events emitted by the `morpho` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per Liquidate(bytes32,address,address,uint256,uint256,uint256,uint256,uint256) event"
+
+[table.morpho__liquidate.columns]
+badDebtAssets = "The `badDebtAssets` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+badDebtShares = "The `badDebtShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+borrower = "The `borrower` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+caller = "The `caller` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+id = "The `id` bytes32 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+repaidAssets = "The `repaidAssets` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+repaidShares = "The `repaidShares` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+seizedAssets = "The `seizedAssets` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.morpho__liquidate.footguns]
+big_ints = [
+    "repaidAssets",
+    "repaidShares",
+    "seizedAssets",
+    "badDebtAssets",
+    "badDebtShares",
+]
+overflows_dec = [
+    "repaidAssets",
+    "repaidShares",
+    "seizedAssets",
+    "badDebtAssets",
+    "badDebtShares",
+]
+
+[table.spark__liquidation_call]
+description = "`LiquidationCall(address,address,address,uint256,uint256,address,bool)` events emitted by the `spark` contract. (seeded from the ABI - edit semantic.toml to improve this)"
+grain = "one row per LiquidationCall(address,address,address,uint256,uint256,address,bool) event"
+
+[table.spark__liquidation_call.columns]
+collateralAsset = "The `collateralAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtAsset = "The `debtAsset` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+debtToCover = "The `debtToCover` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidatedCollateralAmount = "The `liquidatedCollateralAmount` uint256 parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+liquidator = "The `liquidator` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+receiveAToken = "The `receiveAToken` bool parameter - stored as exact text `'true'`/`'false'`, not a SQL boolean. `receiveAToken = true` and `AND`/`NOT` implicitly cast and work; `COALESCE`, `CASE`, `bool_and`/`bool_or` and `UNION` do not. Write `receiveAToken = 'true'` or `CAST(receiveAToken AS BOOLEAN)`. (seeded from the ABI - edit semantic.toml to improve this)"
+user = "The `user` address parameter. (seeded from the ABI - edit semantic.toml to improve this)"
+
+[table.spark__liquidation_call.footguns]
+reserved_words = ["user"]
+big_ints = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+overflows_dec = [
+    "debtToCover",
+    "liquidatedCollateralAmount",
+]
+bools = ["receiveAToken"]
+
+[view]
+
+# Authored views (views/*.sql) are described here so the MCP/`/schema` can render them:
+# [view.your_view_name]
+# description = "What this derivation computes."

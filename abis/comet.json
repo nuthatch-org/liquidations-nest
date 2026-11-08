@@ -1,0 +1,16 @@
+[{"type":"event","name":"AbsorbCollateral","anonymous":false,"inputs":[
+{"name":"absorber","type":"address","indexed":true},
+{"name":"borrower","type":"address","indexed":true},
+{"name":"asset","type":"address","indexed":true},
+{"name":"collateralAbsorbed","type":"uint256","indexed":false},
+{"name":"usdValue","type":"uint256","indexed":false}]},
+{"type":"event","name":"AbsorbDebt","anonymous":false,"inputs":[
+{"name":"absorber","type":"address","indexed":true},
+{"name":"borrower","type":"address","indexed":true},
+{"name":"basePaidOut","type":"uint256","indexed":false},
+{"name":"usdValue","type":"uint256","indexed":false}]},
+{"type":"event","name":"BuyCollateral","anonymous":false,"inputs":[
+{"name":"buyer","type":"address","indexed":true},
+{"name":"asset","type":"address","indexed":true},
+{"name":"baseAmount","type":"uint256","indexed":false},
+{"name":"collateralAmount","type":"uint256","indexed":false}]}]

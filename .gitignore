@@ -1,0 +1,7 @@
+dev.log
+.admin-token
+.bin/
+nuthatch.redb
+segments/
+.burrmill/
+maintained/

@@ -1,0 +1,10 @@
+# The surface a public deployment of this nest answers: rows by block range, nothing free-form.
+[[queries]]
+name = "liquidations_since"
+sql = "SELECT * FROM liquidations WHERE block_number >= {from} ORDER BY block_number, log_index"
+params = { from = "int" }
+
+[[queries]]
+name = "liquidations_range"
+sql = "SELECT * FROM liquidations WHERE block_number >= {from} AND block_number < {to} ORDER BY block_number, log_index"
+params = { from = "int", to = "int" }

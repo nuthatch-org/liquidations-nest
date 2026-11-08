@@ -1,0 +1,5 @@
+[{"type":"event","name":"TroveLiquidated","anonymous":false,"inputs":[
+{"name":"_borrower","type":"address","indexed":true},
+{"name":"_debt","type":"uint256","indexed":false},
+{"name":"_coll","type":"uint256","indexed":false},
+{"name":"_operation","type":"uint8","indexed":false}]}]

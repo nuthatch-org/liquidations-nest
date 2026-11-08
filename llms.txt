@@ -1,0 +1,76 @@
+# nuthatch nest on mainnet
+
+A self-hosted blockchain index. Query it locally; there is no third-party API.
+
+## Contracts
+- `aave` = 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2
+- `aave_prime` = 0x4e033931ad43597d96D6bcc25c280717730B58B1
+- `aave_etherfi` = 0x0AA97c284e98396202b6A04024F5E2c65026F3c0
+- `spark` = 0xC13e21B648A5Ee794902342038FF3aDAB66BE987
+- `comet_usdc` = 0xc3d688B66703497DAA19211EEdff47f25384cdc3
+- `comet_weth` = 0xA17581A9E3356d9A858b789D68B4d866e593aE94
+- `comet_usds` = 0x5D409e56D886231aDAf00c8775665AD0f9897b56
+- `comet_wsteth` = 0x3D0bb1ccaB520A66e607822fC55BC921738fAFE3
+- `morpho` = 0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb
+- `maker` = 0x135954d155898D42C90D2a57824C690e0c7BEf1B
+- `liquity` = 0xA39739EF8b0231DbFA0DcdA07d7e29faAbCf4bb2
+- `eth_usd_p5` = 0x37bC7498f4FF12C19678ee8fE19d713b87F6a9e6
+- `eth_usd_p6` = 0xE62B71cf983019BFf55bC83B48601ce8419650CC
+- `eth_usd_p7` = 0x7d4E742018fb52E48b08BE73d041C18B21de6Fb5
+- `btc_usd_p5` = 0xAe74faA92cB67A95ebCAB07358bC222e33A34dA7
+- `btc_usd_p6` = 0xdBe1941BFbe4410D6865b9b7078e0b49af144D2d
+- `btc_usd_p7` = 0x4a3411ac2948B33c69666B35cc6d055B27Ea84f1
+
+## Tables (one per contract event, plus any `[extract]` table)
+- `aave__liquidation_call` - LiquidationCall(address,address,address,uint256,uint256,address,bool) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, collateralAsset, debtAsset, user, debtToCover, liquidatedCollateralAmount, liquidator, receiveAToken)
+- `aave_etherfi__liquidation_call` - LiquidationCall(address,address,address,uint256,uint256,address,bool) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, collateralAsset, debtAsset, user, debtToCover, liquidatedCollateralAmount, liquidator, receiveAToken)
+- `aave_prime__liquidation_call` - LiquidationCall(address,address,address,uint256,uint256,address,bool) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, collateralAsset, debtAsset, user, debtToCover, liquidatedCollateralAmount, liquidator, receiveAToken)
+- `btc_usd_p5__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `btc_usd_p6__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `btc_usd_p7__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `comet_usdc__absorb_collateral` - AbsorbCollateral(address,address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, asset, collateralAbsorbed, usdValue)
+- `comet_usdc__absorb_debt` - AbsorbDebt(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, basePaidOut, usdValue)
+- `comet_usdc__buy_collateral` - BuyCollateral(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, buyer, asset, baseAmount, collateralAmount)
+- `comet_usds__absorb_collateral` - AbsorbCollateral(address,address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, asset, collateralAbsorbed, usdValue)
+- `comet_usds__absorb_debt` - AbsorbDebt(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, basePaidOut, usdValue)
+- `comet_usds__buy_collateral` - BuyCollateral(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, buyer, asset, baseAmount, collateralAmount)
+- `comet_weth__absorb_collateral` - AbsorbCollateral(address,address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, asset, collateralAbsorbed, usdValue)
+- `comet_weth__absorb_debt` - AbsorbDebt(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, basePaidOut, usdValue)
+- `comet_weth__buy_collateral` - BuyCollateral(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, buyer, asset, baseAmount, collateralAmount)
+- `comet_wsteth__absorb_collateral` - AbsorbCollateral(address,address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, asset, collateralAbsorbed, usdValue)
+- `comet_wsteth__absorb_debt` - AbsorbDebt(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, absorber, borrower, basePaidOut, usdValue)
+- `comet_wsteth__buy_collateral` - BuyCollateral(address,address,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, buyer, asset, baseAmount, collateralAmount)
+- `eth_usd_p5__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `eth_usd_p6__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `eth_usd_p7__answer_updated` - AnswerUpdated(int256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, current, roundId, updatedAt)
+- `liquity__trove_liquidated` - TroveLiquidated(address,uint256,uint256,uint8) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, _borrower, _debt, _coll, _operation)
+- `maker__bark` - Bark(bytes32,address,uint256,uint256,uint256,address,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, ilk, urn, ink, art, due, clip, id)
+- `morpho__create_market` - CreateMarket(bytes32,(address,address,address,address,uint256)) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, id, marketParams)
+- `morpho__liquidate` - Liquidate(bytes32,address,address,uint256,uint256,uint256,uint256,uint256) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, id, caller, borrower, repaidAssets, repaidShares, seizedAssets, badDebtAssets, badDebtShares)
+- `spark__liquidation_call` - LiquidationCall(address,address,address,uint256,uint256,address,bool) (block_number, block_hash, block_timestamp, tx_hash, log_index, address, _seq, collateralAsset, debtAsset, user, debtToCover, liquidatedCollateralAmount, liquidator, receiveAToken)
+
+## SQL types
+- `uint`/`int` columns wider than 64 bits are exact decimal text: never `SUM` the raw column.
+  `<col>_dec` is the value as `DECIMAL(38,0)`, NULL when it does not fit (`<col>_overflow` is
+  then true). Ids, nonces and hashes stay on the raw column.
+- `bool` columns are text `'true'`/`'false'`: write `col = 'true'` or `CAST(col AS BOOLEAN)`.
+- Reserved-word columns such as `"from"` and `"to"` must be double-quoted.
+- Call the MCP `schema` tool first: it lists the `_dec`, bool and reserved columns.
+
+## Live HTTP API (run `nuthatch dev`)
+- `GET /`                    index status
+- `GET /tables`              every table with its columns
+- `GET /table/{name}?limit=N` recent rows of one table (hot + sealed)
+- `GET /entity/{id}`         one row by id (`{block:012}-{logindex:06}`)
+- `GET /sql?q=SELECT...`     read-only SQL; each table is a view named `{alias}__{event}`, and each
+                             authored view (`views/*.sql`) answers by its own name
+- `GET /balances?limit=N`    top holder balances (when an ERC-20 Transfer table is present)
+- `GET /balance/{address}`   one address's derived balance
+- `GET /queries`             the mount's SQL mode and the queries its operator declared in
+                             `mounts.toml` (none on an open nest); `GET /q/{name}` runs one
+- `GET /derived`             the nest's incremental entities (`entities.toml`); `GET /derived/{entity}` reads one
+- `GET /diff?from=X&to=Y`    what happened in a range (`block=N`, or `tx=0x..&block=N`), as JSON, `format=text` or `markdown`
+
+## MCP (for coding agents)
+Run `nuthatch mcp` (stdio) to expose tools: status, schema, tables, table, sql, entity, diff,
+balance, top_balances. Fully offline against the local instance; nothing phones home.

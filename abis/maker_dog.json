@@ -1,0 +1,8 @@
+[{"type":"event","name":"Bark","anonymous":false,"inputs":[
+{"name":"ilk","type":"bytes32","indexed":true},
+{"name":"urn","type":"address","indexed":true},
+{"name":"ink","type":"uint256","indexed":false},
+{"name":"art","type":"uint256","indexed":false},
+{"name":"due","type":"uint256","indexed":false},
+{"name":"clip","type":"address","indexed":false},
+{"name":"id","type":"uint256","indexed":true}]}]
