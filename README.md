@@ -6,7 +6,7 @@ the nest behind [nuthatch-indexer.com/analytics](https://nuthatch-indexer.com/an
 
 ```sh
 nuthatch init --from https://github.com/nuthatch-org/liquidations-nest
-nuthatch dev --dir liquidations --rpc $YOUR_RPC
+nuthatch dev --dir liquidations-nest --rpc $YOUR_RPC
 nuthatch sql "SELECT protocol, count(*), sum(debt_usd) FROM liquidations GROUP BY 1"
 ```
 
